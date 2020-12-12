@@ -3,7 +3,7 @@ package;
 using Lambda;
 using StringTools;
 
-class D03A {
+class D03B {
 	public static function main() {
 		Sys.println(process());
 	}
