@@ -1,0 +1,3 @@
+-cp src/2020
+-m D01A
+--cpp bin/cpp
