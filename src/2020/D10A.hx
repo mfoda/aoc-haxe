@@ -26,8 +26,8 @@ class D10A {
 		diff[1]++; // for first connection to outlet
 		diff[3]++; // for built-in adapter extra joltage
 
-		trace(diff);
-		trace('Multiplied = ${diff[1] * diff[3]}');
+		Sys.println(diff);
+		Sys.println('Multiplied = ${diff[1] * diff[3]}');
 	}
 
 	static inline var input = "8

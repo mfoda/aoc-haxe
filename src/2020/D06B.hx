@@ -5,17 +5,17 @@ using StringTools;
 
 class D06B {
 	public static function main() {
-		process();
+		Sys.println(process());
 	}
 
-	static function process():Void {
+	static function process():Int {
 		var scoreSum = 0;
 		var groups = input.split("\n\n");
 
 		for (group in groups)
 			scoreSum += scoreGroup(group);
 
-		trace(scoreSum);
+		return scoreSum;
 	}
 
 	static function scoreGroup(answers:String):Int {

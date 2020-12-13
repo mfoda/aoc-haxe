@@ -5,10 +5,10 @@ using StringTools;
 
 class D05B {
 	public static function main() {
-		process();
+		Sys.println(process());
 	}
 
-	static function process():Void {
+	static function process():Int {
 		var seatIDs = [];
 
 		for (seatCode in input.split("\n")) {
@@ -23,8 +23,9 @@ class D05B {
 		for (i in 1...seatIDs.length - 1) {
 			var id = seatIDs[i];
 			if (seatIDs[i+1] != id - 1 || seatIDs[i-1] != id + 1)
-				trace(id);
+				return id;
 		}
+		throw "now found";
 	} 
 
 	static function getPos(codes:String, start:Int, end:Int):Int {

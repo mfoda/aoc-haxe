@@ -17,7 +17,7 @@ class D08B {
 		function tryGetResult(insts) {
 			var res = tryExecute(insts);
 			if (!res.iloop)
-				trace(res.acc);
+				Sys.println(res.acc);
 		}
 
 		var insts_orig = input.split("\n").map(parseInstruction);

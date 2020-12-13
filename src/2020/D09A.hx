@@ -5,10 +5,10 @@ using StringTools;
 
 class D09A {
 	public static function main() {
-		process();
+		Sys.println(process());
 	}
 
-	static function process():Void {
+	static function process():Float {
 		var numbers = input.split("\n").map(Std.parseFloat);
 
 		function getCandidates(index) {
@@ -21,8 +21,9 @@ class D09A {
 			var candidates = getCandidates(i);
 
 			if (!validXMAS(n, candidates))
-				trace(n);
+				return n;
 		}
+		throw "not found";
 	}
 
 	static function validXMAS(n:Float, candidates:Array<Float>):Bool {

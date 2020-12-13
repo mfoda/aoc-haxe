@@ -10,10 +10,10 @@ typedef Instruction = {
 
 class D08A {
 	public static function main() {
-		process();
+		Sys.println(process());
 	}
 
-	static function process():Void {
+	static function process():Int {
 		var insts = input.split("\n").map(parseInstruction);
 		var ptr = 0;
 		var acc = 0;
@@ -36,7 +36,7 @@ class D08A {
 			}
 		}
 
-		trace(acc);
+		return acc;
 	}
 
 	static function parseInstruction(str:String):Instruction {

@@ -5,10 +5,10 @@ using StringTools;
 
 class D09B {
 	public static function main() {
-		process();
+		Sys.println('Sum = ${process()}');
 	}
 
-	static function process():Void {
+	static function process():Float {
 		var numbers = input.split("\n").map(Std.parseFloat);
 
 		function getCandidates(index) {
@@ -23,10 +23,11 @@ class D09B {
 			if (!validXMAS(n, candidates)) {
 				var contig = findContiguous(n, numbers);
 				contig.sort((a, b) -> a < b ? -1 : 1);
-				trace('Sum = ${contig[0] + contig[contig.length - 1]}');
+				return contig[0] + contig[contig.length - 1];
 				break;
 			}
 		}
+		throw "not found";
 	}
 
 	static function findContiguous(n:Float, nums:Array<Float>):Array<Float> {

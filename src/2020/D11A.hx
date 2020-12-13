@@ -14,7 +14,7 @@ typedef Layout = Array<Array<Seat>>;
 
 class D11A {
 	public static function main() {
-		process();
+		Sys.println('Occupied seats = ${process()}');
 	}
 
 	static function toSeat(x):Seat
@@ -25,7 +25,7 @@ class D11A {
 			case _: throw "invalid seat";
 		}
 
-	static function process():Void {
+	static function process():Int {
 		var layout = input.split("\n").map(x -> x.split("").map(toSeat));
 		var prev:Layout;
 
@@ -35,7 +35,7 @@ class D11A {
 		} while (!equalLayouts(layout, prev));
 
 		var countOccupied = layout.fold((row, acc) -> acc + row.count(seat -> seat == Seat.Occupied), 0);
-		trace('Occupied seats = $countOccupied');
+		return countOccupied;
 	}
 
 	static function equalLayouts(a:Layout, b:Layout):Bool {
