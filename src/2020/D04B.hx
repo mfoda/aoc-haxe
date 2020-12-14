@@ -26,14 +26,9 @@ class D04B {
 	}
 
 	static function process():Int {
-		var validCount = 0;
-
-		for (passport in parsePassports())
-			if (isValidPassport(passport))
-				validCount++;
-
-		return validCount;
+		return parsePassports().count(isValidPassport);
 	} 
+
 	static function parsePassports():Array<Passport> {
 		var passports = [];
 		var data = input.split("\n\n");
