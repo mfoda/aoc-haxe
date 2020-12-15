@@ -14,14 +14,17 @@ class D03A {
 		var houses = new Map<String, Int>();
 		var x = 0, y = 0;
 
+		var housesWithPresents = 0;
 		function putPresent(x: Int, y: Int) {
 			// loc cannot be used as unique map key
 			// var loc = {x: x, y: y};
 			var loc = '[$x,$y]';
 			if (houses.exists(loc))
 				houses[loc]++;
-			else 
+			else {
 				houses[loc] = 1;
+				housesWithPresents++;
+			}
 		}
 
 		// starting location
@@ -39,12 +42,7 @@ class D03A {
 			case _: throw "invalid direction";
 		}
 
-		var count = 0;
-		for (k => v in houses)
-			if (v > 0)
-				count++;
-
-		Sys.println('# of houses with at least one present = $count');	
+		Sys.println('# of houses with at least one present = $housesWithPresents');	
 	}
 
 	static var input_ = "^>v<";
