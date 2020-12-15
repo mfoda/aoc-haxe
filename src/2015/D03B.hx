@@ -16,8 +16,6 @@ class D03B {
 
 		var housesWithPresents = 0;
 		function putPresent(loc:Loc) {
-			// loc cannot be used as unique map key
-			// var loc = {x: x, y: y};
 			var loc = '[${loc.x},${loc.y}]';
 			if (houses.exists(loc))
 				houses[loc]++;
@@ -28,8 +26,8 @@ class D03B {
 		}
 
 		// starting location
-		var santa = {x: 0, y: y};
-		var robo = {x: 0, y: y};
+		var santa = {x: 0, y: 0};
+		var robo = {x: 0, y: 0};
 		putPresent(santa);
 		putPresent(robo);
 

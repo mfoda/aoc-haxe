@@ -16,8 +16,6 @@ class D03A {
 
 		var housesWithPresents = 0;
 		function putPresent(x: Int, y: Int) {
-			// loc cannot be used as unique map key
-			// var loc = {x: x, y: y};
 			var loc = '[$x,$y]';
 			if (houses.exists(loc))
 				houses[loc]++;
