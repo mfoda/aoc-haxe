@@ -12,11 +12,11 @@ class D12A {
 	}
 
 	static function process() {
-		var sum = parseJson(haxe.Json.parse(input));
+		var sum = parseNumbers(haxe.Json.parse(input));
 		trace('Sum of numbers in document = $sum');
 	}
 
-	static function parseJson(dyn:Dynamic):Int {
+	static function parseNumbers(dyn:Dynamic):Int {
 		var data:DynamicAccess<Dynamic> = dyn;
 		var sum = 0;
 		switch (Type.typeof(data)) {
@@ -36,7 +36,7 @@ class D12A {
 		var obj:DynamicAccess<Dynamic> = dyn;
 		var sum = 0;
 		for (k => v in obj)
-			sum += parseJson(v);
+			sum += parseNumbers(v);
 		return sum;
 	}
 
@@ -44,7 +44,7 @@ class D12A {
 		var array:Array<Dynamic> = dyn;
 		var sum = 0;
 		for (i in array)
-			sum += parseJson(i);
+			sum += parseNumbers(i);
 		return sum;
 	}
 
