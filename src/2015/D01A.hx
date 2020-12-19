@@ -1,5 +1,3 @@
-package y2015;
-
 using Lambda;
 using StringTools;
 
