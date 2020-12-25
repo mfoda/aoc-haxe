@@ -5,19 +5,16 @@ import sys.io.File;
 using Lambda;
 using StringTools;
 
-class D03A
-{
+class D03A {
 	static final input = File.getContent("D03.input");
 
-	public static function main()
-	{
+	public static function main() {
 		var validTris = 0;
 
 		function toInt(str)
 			return Std.parseInt(str);
 
-		for (line in input.split("\n"))
-		{
+		for (line in input.split("\n")) {
 			var tri = ~/\s+/g.split(line.trim());
 			var a = toInt(tri[0]);
 			var b = toInt(tri[1]);

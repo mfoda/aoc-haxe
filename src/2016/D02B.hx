@@ -5,14 +5,12 @@ import sys.io.File;
 using Lambda;
 using StringTools;
 
-class D02B
-{
+class D02B {
 	static final input = File.getContent("D02.input");
 
 	static inline var NUL = "_";
 
-	public static function main()
-	{
+	public static function main() {
 		var x = 0;
 		var y = 2;
 		var btnLayout = [
@@ -29,12 +27,9 @@ class D02B
 		function min(a, b)
 			return Std.int(Math.min(a, b));
 
-		for (line in input.split("\n"))
-		{
-			for (cmd in line.iterator())
-			{
-				switch (String.fromCharCode(cmd))
-				{
+		for (line in input.split("\n")) {
+			for (cmd in line.iterator()) {
+				switch (String.fromCharCode(cmd)) {
 					case "U":
 						var nxtRow = btnLayout[y - 1];
 						var nxtRowValid = nxtRow != null && nxtRow[x] != NUL;

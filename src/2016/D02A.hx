@@ -5,12 +5,10 @@ import sys.io.File;
 using Lambda;
 using StringTools;
 
-class D02A
-{
+class D02A {
 	static final input = File.getContent("D02.input");
 
-	public static function main()
-	{
+	public static function main() {
 		var x = 1;
 		var y = 1;
 		var btnLayout = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
@@ -21,12 +19,9 @@ class D02A
 		function min(a, b)
 			return Std.int(Math.min(a, b));
 
-		for (line in input.split("\n"))
-		{
-			for (cmd in line.iterator())
-			{
-				switch (String.fromCharCode(cmd))
-				{
+		for (line in input.split("\n")) {
+			for (cmd in line.iterator()) {
+				switch (String.fromCharCode(cmd)) {
 					case "U":
 						y = max(0, y - 1);
 					case "R":
