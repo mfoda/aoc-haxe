@@ -47,7 +47,7 @@ class D08 {
 					for (y in 0...h)
 						screen[y][x] = true;
 			case rotateRow(y, n):
-				screen[y] = rotate(screen[y].copy(), n % WIDTH);
+				screen[y] = rotate(screen[y], n % WIDTH);
 			case rotateCol(x, n):
 				var asRow = [for (i in 0...HEIGHT) screen[i][x]];
 				var rotated = rotate(asRow, n % HEIGHT);
