@@ -13,7 +13,7 @@ enum Instruction {
 	rotateCol(x:Int, n:Int);
 }
 
-class D08A {
+class D08 {
 	static final input = File.getContent("D08.input");
 	static inline var ON = "#";
 	static inline var OFF = ".";
@@ -57,29 +57,23 @@ class D08A {
 	}
 
 	static function parseInstruction(str:String):Instruction {
-		if (str.startsWith("rect")) {
-			var reg = ~/rect (\d+)x(\d+)/;
-			if (reg.match(str)) {
-				var w = Std.parseInt(reg.matched(1));
-				var h = Std.parseInt(reg.matched(2));
-				return rect(w, h);
-			}
+		var reg = ~/rect (\d+)x(\d+)/;
+		if (reg.match(str)) {
+			var w = Std.parseInt(reg.matched(1));
+			var h = Std.parseInt(reg.matched(2));
+			return rect(w, h);
 		}
-		if (str.startsWith("rotate row")) {
-			var reg = ~/y=(\d+) by (\d+)/;
-			if (reg.match(str)) {
-				var y = Std.parseInt(reg.matched(1));
-				var n = Std.parseInt(reg.matched(2));
-				return rotateRow(y, n);
-			}
+		var reg = ~/rotate row y=(\d+) by (\d+)/;
+		if (reg.match(str)) {
+			var y = Std.parseInt(reg.matched(1));
+			var n = Std.parseInt(reg.matched(2));
+			return rotateRow(y, n);
 		}
-		if (str.startsWith("rotate column")) {
-			var reg = ~/x=(\d+) by (\d+)/;
-			if (reg.match(str)) {
-				var x = Std.parseInt(reg.matched(1));
-				var n = Std.parseInt(reg.matched(2));
-				return rotateCol(x, n);
-			}
+		var reg = ~/rotate column x=(\d+) by (\d+)/;
+		if (reg.match(str)) {
+			var x = Std.parseInt(reg.matched(1));
+			var n = Std.parseInt(reg.matched(2));
+			return rotateCol(x, n);
 		}
 		throw "parse instruction failed";
 	}
