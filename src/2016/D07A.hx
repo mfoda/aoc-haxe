@@ -1,10 +1,5 @@
 package;
 
-import sys.io.File;
-
-using Lambda;
-using StringTools;
-
 typedef Segments = {
 	outside:Array<String>,
 	inside:Array<String>

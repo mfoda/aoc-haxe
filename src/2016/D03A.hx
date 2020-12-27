@@ -1,10 +1,5 @@
 package;
 
-import sys.io.File;
-
-using Lambda;
-using StringTools;
-
 class D03A {
 	static final input = File.getContent("D03.input");
 
